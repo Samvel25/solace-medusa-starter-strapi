@@ -8,7 +8,12 @@
   "attributes": {
     "Title": {
       "type": "string",
-      "required": true
+      "required": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "Question": {
       "displayName": "FaqQuestion",
@@ -18,7 +23,12 @@
     },
     "Bookmark": {
       "type": "string",
-      "required": true
+      "required": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
     }
   }
 }

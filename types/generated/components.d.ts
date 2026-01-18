@@ -1,28 +1,16 @@
 import type { Struct, Schema } from '@strapi/strapi';
 
-export interface HomepageHeroBanner extends Struct.ComponentSchema {
-  collectionName: 'components_homepage_hero_banners';
+export interface SharedVideo extends Struct.ComponentSchema {
+  collectionName: 'components_shared_videos';
   info: {
-    displayName: 'HeroBanner';
-    icon: '';
+    displayName: 'Video';
+    icon: 'video-camera';
   };
   attributes: {
-    Headline: Schema.Attribute.String & Schema.Attribute.Required;
-    Text: Schema.Attribute.Text;
-    CTA: Schema.Attribute.Component<'homepage.cta', false>;
-    Image: Schema.Attribute.Media<'images' | 'files'> &
-      Schema.Attribute.Required;
-  };
-}
-
-export interface HomepageCta extends Struct.ComponentSchema {
-  collectionName: 'components_homepage_ctas';
-  info: {
-    displayName: 'CTA';
-  };
-  attributes: {
-    BtnText: Schema.Attribute.String;
-    BtnLink: Schema.Attribute.String;
+    VideoFile: Schema.Attribute.Media<'videos'> & Schema.Attribute.Required;
+    Title: Schema.Attribute.String;
+    Description: Schema.Attribute.Text;
+    Poster: Schema.Attribute.Media<'images'>;
   };
 }
 
@@ -33,9 +21,19 @@ export interface FaqFaq extends Struct.ComponentSchema {
     description: '';
   };
   attributes: {
-    Title: Schema.Attribute.String & Schema.Attribute.Required;
+    Title: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     Question: Schema.Attribute.Component<'faq.faq-question', true>;
-    Bookmark: Schema.Attribute.String & Schema.Attribute.Required;
+    Bookmark: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
   };
 }
 
@@ -46,8 +44,69 @@ export interface FaqFaqQuestion extends Struct.ComponentSchema {
     description: '';
   };
   attributes: {
-    Title: Schema.Attribute.String & Schema.Attribute.Required;
-    Text: Schema.Attribute.Text & Schema.Attribute.Required;
+    Title: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Text: Schema.Attribute.Text &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+  };
+}
+
+export interface HomepageHeroBanner extends Struct.ComponentSchema {
+  collectionName: 'components_homepage_hero_banners';
+  info: {
+    displayName: 'HeroBanner';
+    icon: '';
+  };
+  attributes: {
+    Headline: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Text: Schema.Attribute.Text &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    CTA: Schema.Attribute.Component<'homepage.cta', false>;
+    Image: Schema.Attribute.Media<'images' | 'files' | 'videos'> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    Video: Schema.Attribute.Media<'videos'> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+  };
+}
+
+export interface HomepageCta extends Struct.ComponentSchema {
+  collectionName: 'components_homepage_ctas';
+  info: {
+    displayName: 'CTA';
+  };
+  attributes: {
+    BtnText: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    BtnLink: Schema.Attribute.String;
   };
 }
 
@@ -80,7 +139,12 @@ export interface AboutUsWhyUs extends Struct.ComponentSchema {
     description: '';
   };
   attributes: {
-    Title: Schema.Attribute.String & Schema.Attribute.Required;
+    Title: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     Tile: Schema.Attribute.Component<'about-us.tile', true>;
   };
 }
@@ -91,9 +155,24 @@ export interface AboutUsTile extends Struct.ComponentSchema {
     displayName: 'Tile';
   };
   attributes: {
-    Image: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
-    Title: Schema.Attribute.String & Schema.Attribute.Required;
-    Text: Schema.Attribute.Text & Schema.Attribute.Required;
+    Image: Schema.Attribute.Media<'images'> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    Title: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Text: Schema.Attribute.Text &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
   };
 }
 
@@ -104,8 +183,18 @@ export interface AboutUsNumericalContent extends Struct.ComponentSchema {
     description: '';
   };
   attributes: {
-    Title: Schema.Attribute.String & Schema.Attribute.Required;
-    Text: Schema.Attribute.String & Schema.Attribute.Required;
+    Title: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Text: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
   };
 }
 
@@ -116,19 +205,35 @@ export interface AboutUsContentSection extends Struct.ComponentSchema {
     description: '';
   };
   attributes: {
-    Title: Schema.Attribute.String & Schema.Attribute.Required;
-    Text: Schema.Attribute.Text & Schema.Attribute.Required;
-    Image: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    Title: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Text: Schema.Attribute.Text &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Image: Schema.Attribute.Media<'images'> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
   };
 }
 
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
-      'homepage.hero-banner': HomepageHeroBanner;
-      'homepage.cta': HomepageCta;
+      'shared.video': SharedVideo;
       'faq.faq': FaqFaq;
       'faq.faq-question': FaqFaqQuestion;
+      'homepage.hero-banner': HomepageHeroBanner;
+      'homepage.cta': HomepageCta;
       'color-image.color-image': ColorImageColorImage;
       'color-hex.color-hex': ColorHexColorHex;
       'about-us.why-us': AboutUsWhyUs;

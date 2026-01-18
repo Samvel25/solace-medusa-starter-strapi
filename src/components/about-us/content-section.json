@@ -8,19 +8,32 @@
   "attributes": {
     "Title": {
       "type": "string",
-      "required": true
+      "required": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "Text": {
       "type": "text",
-      "required": true
+      "required": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "Image": {
       "type": "media",
       "multiple": false,
-      "required": true,
-      "allowedTypes": [
-        "images"
-      ]
+      "required": false,
+      "allowedTypes": ["images"],
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
     }
   }
 }

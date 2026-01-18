@@ -8,11 +8,21 @@
   "attributes": {
     "Headline": {
       "type": "string",
-      "required": true
+      "required": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "Text": {
       "type": "text",
-      "required": false
+      "required": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "CTA": {
       "displayName": "CTA",
@@ -21,13 +31,26 @@
       "component": "homepage.cta"
     },
     "Image": {
-      "allowedTypes": [
-        "images",
-        "files"
-      ],
+      "allowedTypes": ["images", "files", "videos"],
       "type": "media",
       "multiple": false,
-      "required": true
+      "required": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
+    },
+    "Video": {
+      "allowedTypes": ["videos"],
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
     }
   }
 }
