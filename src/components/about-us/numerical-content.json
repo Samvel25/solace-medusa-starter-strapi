@@ -8,21 +8,11 @@
   "attributes": {
     "Title": {
       "type": "string",
-      "required": false,
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
+      "required": false
     },
     "Text": {
       "type": "string",
-      "required": false,
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
+      "required": false
     }
   }
 }

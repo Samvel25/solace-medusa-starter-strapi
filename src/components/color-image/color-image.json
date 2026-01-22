@@ -7,10 +7,7 @@
   "options": {},
   "attributes": {
     "Image": {
-      "allowedTypes": [
-        "images",
-        "files"
-      ],
+      "allowedTypes": ["images", "files"],
       "type": "media",
       "multiple": false
     }

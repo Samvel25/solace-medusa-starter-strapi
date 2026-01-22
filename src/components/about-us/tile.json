@@ -9,30 +9,15 @@
       "allowedTypes": ["images"],
       "type": "media",
       "multiple": false,
-      "required": false,
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      }
+      "required": false
     },
     "Title": {
       "type": "string",
-      "required": false,
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
+      "required": false
     },
     "Text": {
       "type": "text",
-      "required": false,
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
+      "required": false
     }
   }
 }

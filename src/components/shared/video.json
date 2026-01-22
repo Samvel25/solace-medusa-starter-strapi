@@ -1,28 +1,28 @@
 {
-	"collectionName": "components_shared_videos",
-	"info": {
-		"displayName": "Video",
-		"icon": "video-camera"
-	},
-	"options": {},
-	"attributes": {
-		"VideoFile": {
-			"type": "media",
-			"multiple": false,
-			"required": true,
-			"allowedTypes": ["videos"]
-		},
-		"Title": {
-			"type": "string"
-		},
-		"Description": {
-			"type": "text"
-		},
-		"Poster": {
-			"type": "media",
-			"multiple": false,
-			"required": false,
-			"allowedTypes": ["images"]
-		}
-	}
+  "collectionName": "components_shared_videos",
+  "info": {
+    "displayName": "Video",
+    "icon": "video-camera"
+  },
+  "options": {},
+  "attributes": {
+    "VideoFile": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["videos"]
+    },
+    "Title": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "text"
+    },
+    "Poster": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    }
+  }
 }

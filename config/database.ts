@@ -56,11 +56,13 @@ export default ({ env }) => {
     },
     sqlite: {
       connection: {
+        // IMPORTANT: Database is now in /database folder, NOT in .tmp
+        // This prevents data loss when clearing cache
         filename: path.join(
           __dirname,
           "..",
           "..",
-          env("DATABASE_FILENAME", ".tmp/data.db")
+          env("DATABASE_FILENAME", "database/data.db")
         ),
       },
       useNullAsDefault: true,

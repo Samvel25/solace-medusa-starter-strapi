@@ -8,21 +8,11 @@
   "attributes": {
     "Headline": {
       "type": "string",
-      "required": false,
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
+      "required": false
     },
     "Text": {
       "type": "text",
-      "required": false,
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
+      "required": false
     },
     "CTA": {
       "displayName": "CTA",
@@ -34,23 +24,13 @@
       "allowedTypes": ["images", "files", "videos"],
       "type": "media",
       "multiple": false,
-      "required": false,
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      }
+      "required": false
     },
     "Video": {
       "allowedTypes": ["videos"],
       "type": "media",
       "multiple": false,
-      "required": false,
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      }
+      "required": false
     }
   }
 }

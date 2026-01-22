@@ -6,12 +6,7 @@
   "options": {},
   "attributes": {
     "BtnText": {
-      "type": "string",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
+      "type": "string"
     },
     "BtnLink": {
       "type": "string"

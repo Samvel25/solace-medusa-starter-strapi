@@ -10,15 +10,22 @@
   "options": {
     "draftAndPublish": true
   },
-  "pluginOptions": {},
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
   "attributes": {
     "Banner": {
       "type": "media",
       "multiple": true,
-      "required": true,
-      "allowedTypes": [
-        "images"
-      ]
+      "required": false,
+      "allowedTypes": ["images"],
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "OurStory": {
       "displayName": "Content Section",
